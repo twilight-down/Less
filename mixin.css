@@ -1,0 +1,19 @@
+.a,
+.b {
+  color: aqua;
+}
+.mixin-calss {
+  color: aqua;
+}
+.other-class {
+  background-color: blue;
+}
+button:hover {
+  border: 1px solid #ccc;
+}
+#outer .inner {
+  color: pink;
+}
+.complite-mixin {
+  color: pink;
+}

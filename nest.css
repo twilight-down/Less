@@ -1,0 +1,31 @@
+.header {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.header a {
+    color: sandybrown;
+}
+
+.header a:hover {
+    color: black;
+}
+
+.nav {
+    width: 100px;
+    height: 100px;
+    background-color: slateblue;
+}
+
+.nav .logo {
+    color: springgreen;
+}
+
+.nav::before {
+    content: "";
+}
+
+body :hover {
+    background-color: brown;
+}

@@ -1,0 +1,53 @@
+// 将class选择器和id选择器混入到其他样式中
+.a,.b{
+  color: aqua;
+}
+
+.mixin-calss{
+  .a; // 括号是可选的
+  .b()
+}
+
+//-------------------------
+// 使用mixin但是又不希望被输出到css文件中
+// 可以在定义mixin的时候在后面加上括号
+.other-mixin(){
+  background-color: blue;
+}
+
+.other-class {
+  // 同样的这里的括号也是可选的
+  .other-mixin()
+}
+
+// --------------------------
+// mixin使用选择器
+.hover-mixin(){
+  &:hover{
+    border: 1px solid #ccc;
+  }
+}
+
+button {
+  .hover-mixin()
+}
+
+// -------------
+// 在更复杂的选择器中混入属性，可以叠加多个id或类名
+#outer{
+  .inner{
+    color: pink;
+  }
+}
+
+.complite-mixin{
+  #outer > .inner
+}
+// 下面的写法效果是一样的
+// #outer > .inner;
+// #outer > .inner();
+// #outer .inner;
+// #outer .inner();
+// #outer.inner;
+// #outer.inner();
+
