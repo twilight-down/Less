@@ -51,3 +51,50 @@ button {
 // #outer.inner;
 // #outer.inner();
 
+// ------------------
+// 命名空间守卫
+@mode : nothuge;
+#namespace when (@mode = huge){
+  .mixin(){/* */}
+}
+
+#namespace {
+  .mixin() when (@mode = huge) { /* */ }
+}
+
+// --------------------
+// !important关键字
+.foo{
+  background-color: #fff;
+  font-size: 20px
+}
+.unimportant {
+  .foo();
+}
+.important{
+  .foo()!important
+}
+
+// ---------------
+// 携带参数的混入
+// 定义函数
+.border-radius(@radius){
+  border-radius:@radius
+}
+// 调用函数
+#header {
+  .border-radius(4px);
+}
+// 设置默认值
+.font-size(@fontsize:10px){
+  font-size: @fontsize;
+}
+#header{
+  .font-size();
+  // .font-size;
+}
+// 不传递参数
+.margin(){
+ margin:auto;
+}
+pre{.margin}
